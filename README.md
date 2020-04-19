@@ -1,2 +1,4 @@
 # COVID19 Risk Mitigation
- Internshio @ TAU team, INRIA Saclay
+
+Internship @ TAU team, INRIA Saclay
+*Author: Martín Cepeda*
