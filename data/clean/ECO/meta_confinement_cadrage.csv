@@ -1,0 +1,136 @@
+VAR_ID;VAR_LIB;COD_MOD;LIB_MOD;TYPE_VAR;LONG_VAR
+popMenEP;Population des ménages;;;NUM;8
+popMen024;Population de moins de 25 ans;;;NUM;8
+popMen2559;Population de 25 à 59 ans;;;NUM;8
+popMen60P;Population de 60 ans ou plus;;;NUM;8
+popMen75P;Population de 75 ans ou plus;;;NUM;8
+popAppart;Population des ménages vivant en appartement;;;NUM;8
+partPopAppart;Part de la population des ménages vivant en appartement;;;NUM;8
+popMaison;Population des ménages vivant en maison;;;NUM;8
+partPopMaison;Part de la population des ménages vivant en maison;;;NUM;8
+popCmt;Population vivant en communauté;;;NUM;8
+pop60PHebPerm;Population de 60 ans ou plus vivant en institution (EHPA et USLD) en hébergement permanent;;;NUM;8
+codeReg;Code de la région;FRA;France (hors Mayotte);CHAR;3
+codeReg;Code de la région;MET;France métropolitaine;CHAR;3
+codeReg;Code de la région;DOM;Départements d’Outre-mer (hors Mayotte);CHAR;3
+codeReg;Code de la région;01;Guadeloupe;CHAR;3
+codeReg;Code de la région;02;Martinique;CHAR;3
+codeReg;Code de la région;03;Guyane;CHAR;3
+codeReg;Code de la région;04;La Réunion;CHAR;3
+codeReg;Code de la région;06;Mayotte;CHAR;3
+codeReg;Code de la région;11;Île-de-France;CHAR;3
+codeReg;Code de la région;24;Centre-Val de Loire;CHAR;3
+codeReg;Code de la région;27;Bourgogne-Franche-Comté;CHAR;3
+codeReg;Code de la région;28;Normandie;CHAR;3
+codeReg;Code de la région;32;Hauts-de-France;CHAR;3
+codeReg;Code de la région;44;Grand Est;CHAR;3
+codeReg;Code de la région;52;Pays de la Loire;CHAR;3
+codeReg;Code de la région;53;Bretagne;CHAR;3
+codeReg;Code de la région;75;Nouvelle-Aquitaine;CHAR;3
+codeReg;Code de la région;76;Occitanie;CHAR;3
+codeReg;Code de la région;84;Auvergne-Rhône-Alpes;CHAR;3
+codeReg;Code de la région;93;Provence-Alpes-Côte d'Azur;CHAR;3
+codeReg;Code de la région;94;Corse;CHAR;3
+codeDep;Code du département;FRA;France (hors Mayotte);CHAR;3
+codeDep;Code du département;MET;France métropolitaine;CHAR;3
+codeDep;Code du département;DOM;Départements d’Outre-mer (hors Mayotte);CHAR;3
+codeDep;Code du département;01;Ain;CHAR;3
+codeDep;Code du département;02;Aisne;CHAR;3
+codeDep;Code du département;03;Allier;CHAR;3
+codeDep;Code du département;04;Alpes-de-Haute-Provence;CHAR;3
+codeDep;Code du département;05;Hautes-Alpes;CHAR;3
+codeDep;Code du département;06;Alpes-Maritimes;CHAR;3
+codeDep;Code du département;07;Ardèche;CHAR;3
+codeDep;Code du département;08;Ardennes;CHAR;3
+codeDep;Code du département;09;Ariège;CHAR;3
+codeDep;Code du département;10;Aube;CHAR;3
+codeDep;Code du département;11;Aude;CHAR;3
+codeDep;Code du département;12;Aveyron;CHAR;3
+codeDep;Code du département;13;Bouches-du-Rhône;CHAR;3
+codeDep;Code du département;14;Calvados;CHAR;3
+codeDep;Code du département;15;Cantal;CHAR;3
+codeDep;Code du département;16;Charente;CHAR;3
+codeDep;Code du département;17;Charente-Maritime;CHAR;3
+codeDep;Code du département;18;Cher;CHAR;3
+codeDep;Code du département;19;Corrèze;CHAR;3
+codeDep;Code du département;21;Côte-d'Or;CHAR;3
+codeDep;Code du département;22;Côtes-d'Armor;CHAR;3
+codeDep;Code du département;23;Creuse;CHAR;3
+codeDep;Code du département;24;Dordogne;CHAR;3
+codeDep;Code du département;25;Doubs;CHAR;3
+codeDep;Code du département;26;Drôme;CHAR;3
+codeDep;Code du département;27;Eure;CHAR;3
+codeDep;Code du département;28;Eure-et-Loir;CHAR;3
+codeDep;Code du département;29;Finistère;CHAR;3
+codeDep;Code du département;2A;Corse-du-Sud;CHAR;3
+codeDep;Code du département;2B;Haute-Corse;CHAR;3
+codeDep;Code du département;30;Gard;CHAR;3
+codeDep;Code du département;31;Haute-Garonne;CHAR;3
+codeDep;Code du département;32;Gers;CHAR;3
+codeDep;Code du département;33;Gironde;CHAR;3
+codeDep;Code du département;34;Hérault;CHAR;3
+codeDep;Code du département;35;Ille-et-Vilaine;CHAR;3
+codeDep;Code du département;36;Indre;CHAR;3
+codeDep;Code du département;37;Indre-et-Loire;CHAR;3
+codeDep;Code du département;38;Isère;CHAR;3
+codeDep;Code du département;39;Jura;CHAR;3
+codeDep;Code du département;40;Landes;CHAR;3
+codeDep;Code du département;41;Loir-et-Cher;CHAR;3
+codeDep;Code du département;42;Loire;CHAR;3
+codeDep;Code du département;43;Haute-Loire;CHAR;3
+codeDep;Code du département;44;Loire-Atlantique;CHAR;3
+codeDep;Code du département;45;Loiret;CHAR;3
+codeDep;Code du département;46;Lot;CHAR;3
+codeDep;Code du département;47;Lot-et-Garonne;CHAR;3
+codeDep;Code du département;48;Lozère;CHAR;3
+codeDep;Code du département;49;Maine-et-Loire;CHAR;3
+codeDep;Code du département;50;Manche;CHAR;3
+codeDep;Code du département;51;Marne;CHAR;3
+codeDep;Code du département;52;Haute-Marne;CHAR;3
+codeDep;Code du département;53;Mayenne;CHAR;3
+codeDep;Code du département;54;Meurthe-et-Moselle;CHAR;3
+codeDep;Code du département;55;Meuse;CHAR;3
+codeDep;Code du département;56;Morbihan;CHAR;3
+codeDep;Code du département;57;Moselle;CHAR;3
+codeDep;Code du département;58;Nièvre;CHAR;3
+codeDep;Code du département;59;Nord;CHAR;3
+codeDep;Code du département;60;Oise;CHAR;3
+codeDep;Code du département;61;Orne;CHAR;3
+codeDep;Code du département;62;Pas-de-Calais;CHAR;3
+codeDep;Code du département;63;Puy-de-Dôme;CHAR;3
+codeDep;Code du département;64;Pyrénées-Atlantiques;CHAR;3
+codeDep;Code du département;65;Hautes-Pyrénées;CHAR;3
+codeDep;Code du département;66;Pyrénées-Orientales;CHAR;3
+codeDep;Code du département;67;Bas-Rhin;CHAR;3
+codeDep;Code du département;68;Haut-Rhin;CHAR;3
+codeDep;Code du département;69;Rhône;CHAR;3
+codeDep;Code du département;70;Haute-Saône;CHAR;3
+codeDep;Code du département;71;Saône-et-Loire;CHAR;3
+codeDep;Code du département;72;Sarthe;CHAR;3
+codeDep;Code du département;73;Savoie;CHAR;3
+codeDep;Code du département;74;Haute-Savoie;CHAR;3
+codeDep;Code du département;75;Paris;CHAR;3
+codeDep;Code du département;76;Seine-Maritime;CHAR;3
+codeDep;Code du département;77;Seine-et-Marne;CHAR;3
+codeDep;Code du département;78;Yvelines;CHAR;3
+codeDep;Code du département;79;Deux-Sèvres;CHAR;3
+codeDep;Code du département;80;Somme;CHAR;3
+codeDep;Code du département;81;Tarn;CHAR;3
+codeDep;Code du département;82;Tarn-et-Garonne;CHAR;3
+codeDep;Code du département;83;Var;CHAR;3
+codeDep;Code du département;84;Vaucluse;CHAR;3
+codeDep;Code du département;85;Vendée;CHAR;3
+codeDep;Code du département;86;Vienne;CHAR;3
+codeDep;Code du département;87;Haute-Vienne;CHAR;3
+codeDep;Code du département;88;Vosges;CHAR;3
+codeDep;Code du département;89;Yonne;CHAR;3
+codeDep;Code du département;90;Territoire de Belfort;CHAR;3
+codeDep;Code du département;91;Essonne;CHAR;3
+codeDep;Code du département;92;Hauts-de-Seine;CHAR;3
+codeDep;Code du département;93;Seine-Saint-Denis;CHAR;3
+codeDep;Code du département;94;Val-de-Marne;CHAR;3
+codeDep;Code du département;95;Val-d'Oise;CHAR;3
+codeDep;Code du département;971;Guadeloupe;CHAR;3
+codeDep;Code du département;972;Martinique;CHAR;3
+codeDep;Code du département;973;Guyane;CHAR;3
+codeDep;Code du département;974;La Réunion;CHAR;3
