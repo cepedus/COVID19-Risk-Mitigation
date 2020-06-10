@@ -160,7 +160,7 @@ def save_matrix(fname, mat, deps=[]):
     """
     Saves mobility matrix and dep list indexes to path
     """
-    mat.tofile(fname, sep=';')
+    np.savetxt(fname, mat, delimiter=',',newline='\n')
     if len(deps) != 0:
         meta_fname = fname.replace('.csv', '_META.csv', 1)
         with open(meta_fname, 'w') as out:
