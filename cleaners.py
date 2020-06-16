@@ -4,7 +4,29 @@ import pandas as pd
 import glob
 import os
 
-def summary_hospitalieres(file):
+def hospitalieres_departments(file):
+    """
+    Creates database for department columns
+    """
+    # Open CSV & create df with present dates
+    data = pd.read_csv(file, sep=";",header=0)
+    data['dep'] = data['dep'].apply(lambda x: str(x))
+    new_df = pd.DataFrame()
+    dates= data['jour'].unique()
+    #Extract list of departments
+    deps = list(data['dep'].unique())
+    deps.pop(-1) # delete 'nan' element
+    new_df['date'] = dates
+    data = data[data['sexe'] == 0]
+    # For relevant columns (hospitalized, dead, sent to home, in reanimation) get columns for all departments
+    for d in deps:
+        for c in ['hosp', 'rea', 'rad', 'dc']:
+            dep_data = data[data['dep'] == d][c].to_numpy() 
+            col_name = d + '_' + c
+            new_df[col_name] = dep_data
+    return new_df
+    
+def hospitalieres_summary(file):
     """
     Creates national summary database from daily hospitary data per department
     """
@@ -16,14 +38,36 @@ def summary_hospitalieres(file):
     # Filter data: separate male & female 
     data = data[data['sexe'] != 0]
     # For relevant columns (hospitalized, dead, sent to home, in reanimation) sum for all departments in a given day
-    for c in data.columns:
-        if c not in ['dep', 'sexe', 'jour']:
-            cum_data = data.groupby('jour')[c].sum().to_numpy()
-            # Assign relevant summarized column to storage df
-            new_df[c] = cum_data
+    for c in ['hosp', 'rea', 'rad', 'dc']:
+        cum_data = data.groupby('jour')[c].sum().to_numpy()
+        # Assign relevant summarized column to storage df
+        new_df[c] = cum_data
     return new_df
 
-def summary_tests_old(file):
+def tests_old_departments(file):
+    """
+    Creates database for department columns
+    """
+    # Open CSV & create df with present dates
+    data = pd.read_csv(file, sep=";",header=0)
+    data['dep'] = data['dep'].apply(lambda x: str(x))
+    new_df = pd.DataFrame()
+    dates= data['jour'].unique()
+    #Extract list of departments
+    deps = list(data['dep'].unique())
+    new_df['date'] = dates   
+    # Filter by age group: consider cumulated data
+    filtered = data[data['clage_covid'] == '0']    
+    # Add columns for total tests & positive tests per departments
+    for d in deps:
+        col_name = d + '_' + 'oldP'
+        new_df[col_name] = filtered[filtered['dep'] == d]['nb_pos'].to_numpy()
+        col_name = d + '_' + 'oldT'
+        new_df[col_name] = filtered[filtered['dep'] == d]['nb_test'].to_numpy()    
+    return new_df
+
+
+def tests_old_summary(file):
     """
     Creates national summary database from daily test data per department
     """
@@ -38,11 +82,43 @@ def summary_tests_old(file):
     series = filtered.groupby('jour')['nb_pos'].sum().to_numpy()
     new_df['positive_tests_old'] = series
     series = filtered.groupby('jour')['nb_test'].sum().to_numpy()
-    new_df['total_tests_old'] = series
-    
+    new_df['total_tests_old'] = series    
     return new_df
 
-def summary_tests(file):
+def tests_departments(file):
+    """
+    Creates national summary database from daily test data per department
+    """
+    # Open CSV & create df with present dates
+    data = pd.read_csv(file, sep=",",header=0)
+    data['dep'] = data['dep'].apply(lambda x: str(x))
+    new_df = pd.DataFrame()
+    dates= data['jour'].unique()
+    #Extract list of departments
+    deps = list(data['dep'].unique())
+    new_df['date'] = dates
+    # Filter by age group: consider cumulated data
+    filtered = data[data['cl_age90'] == 0]
+    # Add columns for total tests & positive tests per departments
+    for d in deps:
+        col_name = d + '_' + 'oldP'
+        new_df[col_name] = filtered[filtered['dep'] == d]['p'].to_numpy()
+        col_name = d + '_' + 'oldT'
+        new_df[col_name] = filtered[filtered['dep'] == d]['t'].to_numpy() 
+    
+    # Open aux CSV to get popupations
+    pops_file = file.replace('sp-pos-quot', 'sp-pe-tb-quot')
+    deps_df = pd.read_csv(pops_file, sep=",",header=0)
+    # Get population of every indexed department
+    deps_df = deps_df[deps_df['cl_age90'] == 0].groupby('dep')['pop'].unique()
+    #Create dict of population attributes per deparment
+    deps_sizes = {}
+    deps = deps_df.index.to_numpy()
+    for d in deps:
+        deps_sizes[d] = deps_df[d][0]
+    return new_df, deps_sizes
+
+def tests_summary(file):
     """
     Creates national summary database from daily test data per department
     """
