@@ -4,6 +4,42 @@ import pandas as pd
 import glob
 import os
 
+def french_datify(s, year):
+    d, m = s.split('-')
+    if m == 'mars':
+        m = '03'
+    elif m == 'avr.':
+        m = '04'
+    elif m == 'mai':
+        m = '05'
+    elif m == 'juin':
+        m = '06'
+    elif m == 'juil.':
+        m = '07'
+    return '-'.join([year, m, d])
+
+def deaths_INSEE(file, y):
+    # Open CSV and keep only national-yearwise data
+    data = pd.read_csv(file, sep=";",header=0)
+    data = data[data.Zone == 'France']
+    keep_cols = [c for c in data.columns if 'Total' in c or 'Date' in c]
+    data = data.drop([c for c in data.columns if c not in keep_cols], axis=1)
+    # Rename columns accordingly
+    col_names = []
+    for c in keep_cols:
+        if 'Total' in c:
+            col_names.append(c.split('_')[-1])
+        else:
+            col_names.append('date')
+    data.columns = col_names
+    # Keep only one year
+    year = str(y)
+    data['date'] = data['date'].apply(lambda s: french_datify(s, year))
+    data = data.drop([c for c in data.columns if c not in ['date', year]], axis=1)
+    data.columns = ['date', 'D_total']
+    data = data.reset_index(drop=True)
+    return data
+
 def hospitalieres_departments(file):
     """
     Creates database for department columns
