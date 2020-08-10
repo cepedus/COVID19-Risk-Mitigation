@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 dev/
+old_notebooks/
 .ipynb_checkpoints/
 .gitattributes
 *.edgelist
