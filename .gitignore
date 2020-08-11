@@ -1,9 +1,10 @@
-# Byte-compiled / optimized / DLL files
+# Python cache
 __pycache__/
 *.py[cod]
 *$py.class
+# Working direcory 
 dev/
-old_notebooks/
+# Jupyter cache
 .ipynb_checkpoints/
+
 .gitattributes
-*.edgelist
